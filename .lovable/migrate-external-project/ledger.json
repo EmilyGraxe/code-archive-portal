@@ -1,0 +1,13 @@
+[
+  {"capability":"code: public pages (home, flight booking, hotel reservations, guesthouses, travel moments)","source":"Express + EJS views","outcome":"migrate","status":"done","next_action":"none"},
+  {"capability":"images, logo, favicon","source":"public/assets","outcome":"migrate","status":"done","next_action":"none"},
+  {"capability":"schema/records","source":"pg listed in package.json but never used; all listings are hard-coded sample data","outcome":"migrate sample data as static content","status":"done","next_action":"none"},
+  {"capability":"auth identities / authorization","source":"none present","outcome":"n/a","status":"accepted","next_action":"none"},
+  {"capability":"admin pages (guesthouses, travel moments, destinations)","source":"in-memory dummy CRUD, no auth, lost on restart","outcome":"not recreated","status":"accepted","next_action":"Build a real admin with Lovable Cloud if the owner wants to manage listings"},
+  {"capability":"flight / hotel / guesthouse booking forms","source":"POST handlers that only show a confirmation, nothing stored or emailed","outcome":"preserved behavior (on-page confirmation)","status":"done","next_action":"Optional: store or email bookings via Lovable Cloud"},
+  {"capability":"contact form","source":"formsubmit.co external form service","outcome":"preserved","status":"done","next_action":"none"},
+  {"capability":"email (nodemailer)","source":"dependency only, never called","outcome":"n/a","status":"accepted","next_action":"none"},
+  {"capability":"uploaded files (uploads/)","source":"4 unnamed files unreferenced by code","outcome":"not migrated","status":"accepted","next_action":"none"},
+  {"capability":"secrets","source":"none","outcome":"n/a","status":"accepted","next_action":"none"},
+  {"capability":"verification","source":"-","outcome":"build + browser check","status":"pending","next_action":"verify"}
+]
