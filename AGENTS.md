@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Site content (guesthouses, travel moments, destinations, contact details) lives in `src/lib/site-data.ts`; the original Express app had no real database, so listings are static until a Cloud-backed admin is requested.
+- Shared header/footer/page wrapper live in `src/components/SiteLayout.tsx`; every page wraps content in `PageShell`.
+- Booking forms show an on-page confirmation only (matches the original site); the contact form posts to an external form service.
