@@ -9,5 +9,5 @@
   {"capability":"email (nodemailer)","source":"dependency only, never called","outcome":"n/a","status":"accepted","next_action":"none"},
   {"capability":"uploaded files (uploads/)","source":"4 unnamed files unreferenced by code","outcome":"not migrated","status":"accepted","next_action":"none"},
   {"capability":"secrets","source":"none","outcome":"n/a","status":"accepted","next_action":"none"},
-  {"capability":"verification","source":"-","outcome":"build + browser check","status":"pending","next_action":"verify"}
+  {"capability":"verification","source":"-","outcome":"typecheck clean, routing test passed, pages and redirect checked in browser","status":"verified","next_action":"none"}
 ]
