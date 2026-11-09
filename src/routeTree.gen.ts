@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as HotelGuesthouseRouteImport } from './routes/HotelGuesthouse'
+import { Route as HotelsRouteImport } from './routes/hotels'
+import { Route as FlightbookingBookingRouteImport } from './routes/flightbooking.booking'
+import { Route as GuesthousesIndexRouteImport } from './routes/guesthouses.index'
+import { Route as GuesthousesIdRouteImport } from './routes/guesthouses.$id'
+import { Route as TravelmomentsIndexRouteImport } from './routes/travelmoments.index'
+import { Route as TravelmomentsIdRouteImport } from './routes/travelmoments.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HotelGuesthouseRoute = HotelGuesthouseRouteImport.update({
+  id: '/HotelGuesthouse',
+  path: '/HotelGuesthouse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HotelsRoute = HotelsRouteImport.update({
+  id: '/hotels',
+  path: '/hotels',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FlightbookingBookingRoute = FlightbookingBookingRouteImport.update({
+  id: '/flightbooking/booking',
+  path: '/flightbooking/booking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuesthousesIndexRoute = GuesthousesIndexRouteImport.update({
+  id: '/guesthouses/',
+  path: '/guesthouses/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuesthousesIdRoute = GuesthousesIdRouteImport.update({
+  id: '/guesthouses/$id',
+  path: '/guesthouses/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TravelmomentsIndexRoute = TravelmomentsIndexRouteImport.update({
+  id: '/travelmoments/',
+  path: '/travelmoments/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TravelmomentsIdRoute = TravelmomentsIdRouteImport.update({
+  id: '/travelmoments/$id',
+  path: '/travelmoments/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/HotelGuesthouse': typeof HotelGuesthouseRoute
+  '/hotels': typeof HotelsRoute
+  '/flightbooking/booking': typeof FlightbookingBookingRoute
+  '/guesthouses/$id': typeof GuesthousesIdRoute
+  '/travelmoments/$id': typeof TravelmomentsIdRoute
+  '/guesthouses/': typeof GuesthousesIndexRoute
+  '/travelmoments/': typeof TravelmomentsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/HotelGuesthouse': typeof HotelGuesthouseRoute
+  '/hotels': typeof HotelsRoute
+  '/flightbooking/booking': typeof FlightbookingBookingRoute
+  '/guesthouses/$id': typeof GuesthousesIdRoute
+  '/travelmoments/$id': typeof TravelmomentsIdRoute
+  '/guesthouses': typeof GuesthousesIndexRoute
+  '/travelmoments': typeof TravelmomentsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/HotelGuesthouse': typeof HotelGuesthouseRoute
+  '/hotels': typeof HotelsRoute
+  '/flightbooking/booking': typeof FlightbookingBookingRoute
+  '/guesthouses/$id': typeof GuesthousesIdRoute
+  '/travelmoments/$id': typeof TravelmomentsIdRoute
+  '/guesthouses/': typeof GuesthousesIndexRoute
+  '/travelmoments/': typeof TravelmomentsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/HotelGuesthouse'
+    | '/hotels'
+    | '/flightbooking/booking'
+    | '/guesthouses/$id'
+    | '/travelmoments/$id'
+    | '/guesthouses/'
+    | '/travelmoments/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/HotelGuesthouse'
+    | '/hotels'
+    | '/flightbooking/booking'
+    | '/guesthouses/$id'
+    | '/travelmoments/$id'
+    | '/guesthouses'
+    | '/travelmoments'
+  id:
+    | '__root__'
+    | '/'
+    | '/HotelGuesthouse'
+    | '/hotels'
+    | '/flightbooking/booking'
+    | '/guesthouses/$id'
+    | '/travelmoments/$id'
+    | '/guesthouses/'
+    | '/travelmoments/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HotelGuesthouseRoute: typeof HotelGuesthouseRoute
+  HotelsRoute: typeof HotelsRoute
+  FlightbookingBookingRoute: typeof FlightbookingBookingRoute
+  GuesthousesIdRoute: typeof GuesthousesIdRoute
+  TravelmomentsIdRoute: typeof TravelmomentsIdRoute
+  GuesthousesIndexRoute: typeof GuesthousesIndexRoute
+  TravelmomentsIndexRoute: typeof TravelmomentsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/HotelGuesthouse': {
+      id: '/HotelGuesthouse'
+      path: '/HotelGuesthouse'
+      fullPath: '/HotelGuesthouse'
+      preLoaderRoute: typeof HotelGuesthouseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hotels': {
+      id: '/hotels'
+      path: '/hotels'
+      fullPath: '/hotels'
+      preLoaderRoute: typeof HotelsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/flightbooking/booking': {
+      id: '/flightbooking/booking'
+      path: '/flightbooking/booking'
+      fullPath: '/flightbooking/booking'
+      preLoaderRoute: typeof FlightbookingBookingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guesthouses/': {
+      id: '/guesthouses/'
+      path: '/guesthouses'
+      fullPath: '/guesthouses/'
+      preLoaderRoute: typeof GuesthousesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guesthouses/$id': {
+      id: '/guesthouses/$id'
+      path: '/guesthouses/$id'
+      fullPath: '/guesthouses/$id'
+      preLoaderRoute: typeof GuesthousesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/travelmoments/': {
+      id: '/travelmoments/'
+      path: '/travelmoments'
+      fullPath: '/travelmoments/'
+      preLoaderRoute: typeof TravelmomentsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/travelmoments/$id': {
+      id: '/travelmoments/$id'
+      path: '/travelmoments/$id'
+      fullPath: '/travelmoments/$id'
+      preLoaderRoute: typeof TravelmomentsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HotelGuesthouseRoute: HotelGuesthouseRoute,
+  HotelsRoute: HotelsRoute,
+  FlightbookingBookingRoute: FlightbookingBookingRoute,
+  GuesthousesIdRoute: GuesthousesIdRoute,
+  TravelmomentsIdRoute: TravelmomentsIdRoute,
+  GuesthousesIndexRoute: GuesthousesIndexRoute,
+  TravelmomentsIndexRoute: TravelmomentsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
