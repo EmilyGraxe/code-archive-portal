@@ -42,7 +42,7 @@ function Index() {
     const t = setInterval(() => setI((v) => (v + 1) % slides.length), 4000);
     return () => clearInterval(t);
   }, []);
-  const s = slides[i];
+  const s = slides[i] ?? slides[0]!;
 
   return (
     <PageShell>

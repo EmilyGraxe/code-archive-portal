@@ -6,7 +6,7 @@ type Search = { bedrooms?: number };
 
 export const Route = createFileRoute("/guesthouses/")({
   validateSearch: (s: Record<string, unknown>): Search => {
-    const n = Number(s.bedrooms);
+    const n = Number(s["bedrooms"]);
     return Number.isInteger(n) && n > 0 ? { bedrooms: n } : {};
   },
   head: () => ({

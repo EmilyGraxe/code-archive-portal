@@ -24,7 +24,7 @@ export function SiteHeader() {
         </Link>
         <nav className="hidden items-center gap-6 lg:flex">
           {links.map((l) => (
-            <Link key={l.label} to="/" hash={l.hash || undefined} className="font-semibold text-foreground/80 transition-colors hover:text-primary">
+            <Link key={l.label} to="/" {...(l.hash ? { hash: l.hash } : {})} className="font-semibold text-foreground/80 transition-colors hover:text-primary">
               {l.label}
             </Link>
           ))}
@@ -39,7 +39,7 @@ export function SiteHeader() {
       {open && (
         <nav className="flex flex-col gap-1 border-t px-4 pb-4 lg:hidden">
           {links.map((l) => (
-            <Link key={l.label} to="/" hash={l.hash || undefined} onClick={() => setOpen(false)} className="py-2 font-semibold">
+            <Link key={l.label} to="/" {...(l.hash ? { hash: l.hash } : {})} onClick={() => setOpen(false)} className="py-2 font-semibold">
               {l.label}
             </Link>
           ))}
