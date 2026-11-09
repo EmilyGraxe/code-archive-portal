@@ -69,7 +69,7 @@ export function SiteFooter() {
         <div>
           <h6 className="mb-3 font-bold uppercase">Top Services</h6>
           <ul className="space-y-1">
-            <li><Link to="/flightbooking">Flight Booking</Link></li>
+            <li><Link to="/flightbooking/booking">Flight Booking</Link></li>
             <li><Link to="/hotels">Hotel Reservations</Link></li>
             <li><Link to="/" hash="features">Visa Processing</Link></li>
             <li><Link to="/" hash="features">Car Hire</Link></li>
